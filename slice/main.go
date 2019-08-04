@@ -32,6 +32,5 @@ func main() {
 
 	//ajout d'un lettre
 	lettres = append(lettres, "!")
-	fmt.Printf("%v longueur=%d, capacite=%d)\n", lettres, len(lettres), cap(lettres))
 
 }
