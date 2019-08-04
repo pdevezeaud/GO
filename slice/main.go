@@ -32,5 +32,30 @@ func main() {
 
 	//ajout d'un lettre
 	lettres = append(lettres, "!")
+	fmt.Printf("%v longueur=%d, capacite=%d)\n", lettres, len(lettres), cap(lettres))
+	// ici on va faire des tranche de slice avec des slice
+	// on stocke de sub1 un morceau de lettres dans sub1 pui dans sub2
+	// ici on prend de l'indice 0 à deux soit gol pur un lang pour l'autre
+	fmt.Println("********************************************")
+	// on peut ommettre aussi le 0
+	sub1 := lettres[0:2]
+	fmt.Printf("%v longueur=%d, capacite=%d)\n", sub1, len(sub1), cap(sub1))
+
+	fmt.Println("********************************************")
+	// ici go autorise de ne rien mettre,implicitement il en découle qu'il va jusqu'à la fin du tableau
+	sub2 := lettres[2:]
+	fmt.Printf("%v longueur=%d, capacite=%d)\n", sub2, len(sub2), cap(sub2))
+
+	fmt.Println("********************************************")
+	fmt.Println("********************************************")
+	sub2[3] = "up"
+	fmt.Printf("%v longueur=%d, capacite=%d)\n", lettres, len(lettres), cap(lettres))
+
+	fmt.Println("**********  COPIE DE SLICE  **********************")
+	fmt.Println("************                **********************")
+	// on initialise la variable dans laquel on va stocké la copie
+	subCopy := make([]string, len(sub1))
+	copy(subCopy, sub1)
+	fmt.Printf("copy %v longueur=%d, capacite=%d)\n", subCopy, len(subCopy), cap(subCopy))
 
 }
