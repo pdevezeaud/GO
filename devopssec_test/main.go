@@ -1,15 +1,20 @@
 package main
 
-import "fmt"
+import (
+	"bufio"
+	"fmt"
+	"os"
+	"strconv"
+)
 
-//constantes globale
+//constantes globales qui ne bourgerons pendant le deroulement du programme
 const (
 	tailleDamier  = 9
 	symboleJoeur1 = "x"
 	symboleJoeur2 = "0"
 )
 
-//varialble globale
+//varialbles globales qui peuvent bouger pendant la partie
 
 var (
 	tableauMorpion = [tailleDamier]string{
@@ -22,7 +27,7 @@ var (
 )
 
 //Afficher tableau
-func affichage() {
+func affichageTableau() {
 
 	for i := 0; i < len(tableauMorpion); i++ {
 
@@ -34,9 +39,19 @@ func affichage() {
 
 }
 
+func SaisieSymbole() {
+
+	scanner := bufio.NewScanner(os.Stdin)
+	var saisie string
+	fmt.Print("Entrez votre symbole : ")
+	saisie = scanner.Scan.()
+	fmt.Println(saisie)
+}
+
 //function principale
 
 func main() {
 
-	affichage()
+	affichageTableau()
+	SaisieSymbole()
 }
